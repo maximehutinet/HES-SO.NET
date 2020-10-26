@@ -1,0 +1,55 @@
+version: '3'
+
+services:
+  django-db:
+    container_name: django-db
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=test
+    networks:
+      - hes-django
+  django-app:
+    container_name: django-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #command: "/start_back.sh -d back"
+    networks:
+      - hes-django
+    volumes:
+      - ./web_app:/app
+    ports:
+      - "8001:8000"
+    depends_on:
+      - django-db
+      - django-memcached
+      - rabbitmq
+      - redis
+  rabbitmq:
+    container_name: rabbitmq-notif
+    image: rabbitmq:3-management
+    networks:
+      - hes-django
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  django-memcached:
+    container_name: memcached-cache
+    image: memcached:1.6.3-alpine
+    networks:
+      - hes-django
+    ports:
+      - "11211:11211"
+  redis:
+    container_name: redis-chat
+    image: redis:5
+    networks:
+      - hes-django
+    ports:
+      - "6379:6379"
+volumes:
+  web_front:
+  web_back:
+
+networks:
+  hes-django:

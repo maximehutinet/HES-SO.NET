@@ -1,0 +1,51 @@
+<div class="modal fade" id="modal-see-group" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document" id="modal-container">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="group-edit" class="btn-small">Edit</button>
+                <button id="group-leave" class="btn-small">Leave</button>
+                <button id="group-leave" class="btn-small">Invit users</button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <span id="group-name" class="login100-form-title p-b-0">My awesome group</span>
+                <span id="group-visibility">Visibility</span>
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Members</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Messages</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                        <div class="group-block-admin">
+                            <h4>Admin</h4>
+                            <div id="group-admin"></div>
+                        </div>
+                        <div class="group-block-members">
+                            <h4>Members</h4>
+                            <br />
+                            <div class="dropdown">
+                                <button onclick="btn_showUserList()" class="dropbtn btn-small">Invite User</button>
+                                <div id="group_users_list" class="dropdown-content">
+                                    <input style="min-width: 230px;min-height: 50px; padding: 12px 16px;" type="text" placeholder="Search..." id="group_search" onkeyup="filterUserFunction()">
+                                    <div id="search-content">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="group-members"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <div id="group-messages"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

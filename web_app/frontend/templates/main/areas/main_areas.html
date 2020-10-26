@@ -1,0 +1,40 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<div id="areas-panel" class="cd-panel cd-panel--from-right js-cd-panel-main">
+    <header class="cd-panel__header">
+        <h3>Area</h3>
+        <a href="#0" class="cd-panel__close js-cd-close">Close</a>
+    </header>
+
+    <div class="cd-panel__container">
+        <div class="cd-panel__content card">
+            <div class="main-card mb-3 card">
+                <div class="card-header-tab card-header">
+                    <ul class="tabs-animated-shadow nav-justified tabs-animated nav">
+                        <li class="nav-item">
+                            <a role="tab" class="nav-link active show" id="tab-prf-view-list" data-toggle="tab" href="#tab-area" aria-selected="true">
+                                <span class="nav-text">All</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a role="tab" class="nav-link show" id="tab-prf-view-add" data-toggle="tab" href="#tab-area-add" aria-selected="true">
+                                <span class="nav-text">Add</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body tab-content panel-content">
+                    <div class="tab-pane show active" id="tab-area" role="tabpanel">
+                    </div>
+                    <div class="tab-pane show" id="tab-area-add" role="tabpanel">
+                        <div id="results_create_area"></div>
+                        <form id="id-area-create" method="post">
+                            {{ update_area_form|crispy }}
+                            <button type="submit" class="btn btn-block btn-dark">Add</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

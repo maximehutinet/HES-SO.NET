@@ -1,0 +1,8 @@
+    
+    {% if access_token %}
+        <script> localStorage.setItem('access_token', "{{access_token}}"); </script>
+    {% endif %}
+
+    {% if refresh_token %}
+        <script> localStorage.setItem('refresh_token', "{{refresh_token}}"); </script>
+    {% endif %}

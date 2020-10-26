@@ -1,0 +1,17 @@
+
+
+.context-menu-custom {
+  font-weight: normal !important;
+}
+
+.context-menu-custom.context-menu-hover {
+  color: #000 !important;
+  background: #e0f3ff !important;
+}
+
+.context-menu-icon.context-menu-icon--fa.context-menu-hover:before {
+  color: #2980b9 !important;
+}
+.context-menu-icon.context-menu-icon--fa.context-menu-disabled::before {
+  color: #2980b9 !important;
+}

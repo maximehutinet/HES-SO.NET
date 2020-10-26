@@ -1,0 +1,55 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+        {% include "main/token.html" %}
+
+        {% include "main/topbar.html" %}
+
+        {% include "main/theme-editor.html" %}
+        <div class="app-main">
+        {% include "main/sidebar.html" %}
+            <div class="app-main__outer">
+                <div class="app-main__inner">
+                    <!-- {% include "main/content_header.html" %} -->
+                    <div class="row">
+                        <div class="col-sm-12" id="map-holder">
+                          <div id="map" class="context-menu-one"></div>
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    //<![CDATA[
+                    function resize() {
+                        var heights = window.innerHeight;
+                        document.getElementById("map").style.height = (heights-130) + "px";
+                    }
+                    resize();
+                    window.onresize = function() {
+                        resize();
+                    };
+                    //]]>
+                </script> 
+                
+                {% include "main/messages/create_message_modal.html" %}
+
+                {% include "main/messages/message_create_form.html" %}
+
+                {% include "main/groups/create_group_modal.html" %}
+
+                {% include "main/groups/join_group_modal.html" %}
+
+                {% include "main/groups/see_group_modal.html" %}
+
+                {% include "main/panels.html" %}
+
+                {% include "main/chat.html" %}
+
+                <!-- {% include "main/footer.html" %} -->
+                <div class="alert-container"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

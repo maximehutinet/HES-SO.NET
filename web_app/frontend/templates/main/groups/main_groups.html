@@ -1,0 +1,49 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<div id="groups-panel" class="cd-panel cd-panel--from-right js-cd-panel-main">
+    <header class="cd-panel__header">
+        <h3>Groups</h3>
+        <a href="#0" class="cd-panel__close js-cd-close">Close</a>
+    </header>
+
+    <div class="cd-panel__container">
+        <div class="cd-panel__content card">
+            <div class="main-card mb-3 card">
+                <div class="card-header-tab card-header">
+                    <ul class="tabs-animated-shadow nav-justified tabs-animated nav">
+                        <li class="nav-item">
+                            <a role="tab" class="nav-link active show" id="tab-grp-view" data-toggle="tab" href="#tab-groups" aria-selected="true">
+                                <span class="nav-text">All</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a role="tab" class="nav-link show" id="tab-grp-add" data-toggle="tab" href="#tab-groups-add" aria-selected="true">
+                                <span class="nav-text">Add</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body tab-content panel-content">
+                    <div class="tab-pane show active panel-content" id="tab-groups" role="tabpanel">
+
+                    </div>
+
+                    <div class="tab-pane show panel-content" id="tab-groups-add" role="tabpanel">
+                        <form id="create_group_form" enctype="multipart/form-data" method="POST">
+                            <div id="result_create_group"></div>
+                            {% csrf_token %}
+                            {{ add_group_from|crispy }}
+                            <button type="submit" class="btn btn-block btn-dark" >Create Group</button>
+                        </form>
+                    </div>
+                </div>
+                <div id="panel-groups-content-container" style="padding: 20px;">
+
+
+
+                </div>
+             </div>
+        </div>
+    </div>
+</div>

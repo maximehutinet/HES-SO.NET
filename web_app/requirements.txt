@@ -1,0 +1,16 @@
+Django>=3.0,<3.0.2
+djangorestframework==3.10.3
+requests==2.22.0
+psycopg2==2.7,<3.0
+django-cors-headers==3.2.1
+djangorestframework-simplejwt==4.4.0
+django-createsuperuserwithpassword==2.0.0
+django-file-form
+django-grappelli
+django-tinymce
+django-crispy-forms
+pika
+channels
+channels_redis
+drf-yasg
+python-memcached

@@ -1,0 +1,98 @@
+{% load static %}
+<div class="app-header header-shadow">
+    <div class="app-header__logo">
+        <div class="logo-src"></div>
+        <div class="header__pane ml-auto">
+            <div>
+                <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="app-header__mobile-menu">
+        <div>
+            <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </div>
+    </div>
+    <div class="app-header__menu">
+        <span>
+            <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                <span class="btn-icon-wrapper">
+                    <i class="fa fa-ellipsis-v fa-w-6"></i>
+                </span>
+            </button>
+        </span>
+    </div>    
+    <div class="app-header__content">
+        <div class="app-header-left">
+            <div class="dropdown">
+            <div class="search-wrapper">
+                    <div class="input-holder">
+                        <input type="text" class="search-input"  id="search-place" placeholder="Type to search">
+                        <button class="search-icon"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span></span></button>
+                    </div>
+
+                <button class="close"></button>
+                </div>
+                <div  id="dropdownSearch" role="menu" aria-hidden="true" class="dropdown-menu">
+
+                </div>
+            </div>
+            <ul class="header-menu nav">
+<!--                 <li class="nav-item">
+                    <a href="javascript:void(0);" class="nav-link">
+                        <i class="nav-link-icon fa fa-database"> </i>
+                        Statistics
+                    </a>
+                </li> -->
+                <li class="dropdown nav-item">
+                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link btn-chat-header">
+                        <i class="nav-link-icon fas fa-comment-alt"></i>
+                        Chat
+                    </a>
+                    <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-left dropdown-chat-friends">
+                        <h6 tabindex="-1" class="dropdown-header">Friends</h6>
+                        <div tabindex="-1" class="dropdown-divider"></div>
+                    </div>
+                </li>
+            </ul>        
+        </div>
+        <div class="app-header-right">
+            <div class="header-btn-lg pr-0">
+                <div class="widget-content p-0">
+                    <div class="widget-content-wrapper">
+                        <div class="widget-content-left">
+                            <div class="btn-group">
+                                <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
+                                    <img id="profile_photo_top" width="42" class="rounded-circle" src="{% if user.photo %}media/{{ user.photo }}{% else %}{% static 'img/avatar.png' %}{% endif %}" alt="">
+                                    <i class="fa fa-angle-down ml-2 opacity-8"></i>
+                                </a>
+                                <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right dropdown-profile">
+                                    <h6 tabindex="-1" class="dropdown-header">Your space</h6>
+                                    <a href="#0" id="profile-panel-btn" type="button" class="dropdown-item js-cd-panel-trigger" data-panel="main">Profile</a>
+                                    <div tabindex="-1" class="dropdown-divider"></div>
+                                    <a href="{% url 'frontend:logout' %}" type="button" tabindex="0" class="dropdown-item">Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-content-left  ml-3 header-user-info">
+                            <div id="top-profile" class="widget-heading">
+                                {{ current_user }}
+                            </div>
+                            <div id="top-email" class="widget-subheading">
+                                {{ current_user.email }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

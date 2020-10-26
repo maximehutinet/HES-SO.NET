@@ -1,0 +1,52 @@
+{% load static %}
+
+<div class="modal fade " id="modal-post-group" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog wrap-Group" role="document" id="modal-container">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="login100-form-title p-b-0">Create group</span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="create_group" class="login100-form validate-form" method="post">
+                {% csrf_token %}
+                    <div class="">
+                        <img id="GroupImg" src="{% static 'img/map_favicon.png' %}" alt="">
+                        <div id="nameOfGroup" class="wrap-input100 validate-input m-b-20" data-validate="Enter group name">
+                            <input class="input100" type="text" name="groupName" placeholder="Group name">
+                            <span class="focus-input100"></span>
+                        </div>
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-20">
+                        <select id="visibility" name="visibility" class="select-box100">
+                            <option value="3">Private</option>
+                            <option value="2">Semi-private</option>
+                            <option value="1">Public</option>
+                        </select>
+                        <span class="focus-select-box100"></span>
+                    </div>
+                    <div class="adminNewGroup">
+                        <img id="imgAdmin" src="{% static 'img/map_favicon.png' %}" alt="">
+                        <span id="adminName">Admin name</span>
+                    </div>
+                    <div id="formGroup">
+                        <span id="membText">Members</span>
+                        <button type="button" id="InviteUser" onclick="btn_showUserList()" class="login100-form-btn">Invite user</button>
+                        <div class="membresNewGroup">
+                            <!-- Every member-->
+                            <img id="imgAdmin" src="{% static 'img/map_favicon.png' %}" alt="">
+                            <span id="adminName">Admin name</span>
+                        </div>
+                    </div>
+                    <div class="container-login100-form-btn">
+                        <div class="form-group text-center">
+                            <button type="submit" class="login100-form-btn">Create</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

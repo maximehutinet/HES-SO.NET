@@ -1,0 +1,36 @@
+/** Loading screen ************************************************************/
+.loader {
+  position: absolute;
+  background: #FFF;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+}
+
+.loader-container {
+  margin-top: 25%;
+  margin-left: 50%;
+  transform: translate(-50%,-50%);
+  width: 70px;
+}
+
+.loader.fade-out {
+    opacity: 0;
+    z-index: -1;
+    transition: z-index 0s 2s, opacity 2s linear;
+}
+
+.plane {
+  animation: spin 3s linear infinite;
+  fill: #fcba03;
+  transform-origin: 50% 50%;
+}
+
+@keyframes spin{
+	0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}

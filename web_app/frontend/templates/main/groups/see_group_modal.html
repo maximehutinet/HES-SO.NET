@@ -1,0 +1,73 @@
+<div class="modal fade" id="modal-see-group" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document" id="modal-container">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="group-edit" class="btn-small">Edit</button>
+                <button id="group-leave" class="btn-small">Leave</button>
+                <button id="group-invit-user-btn" class="btn-small">Invit users</button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div id="group-modal-body" class="modal-body">
+                
+                <div id="group-container-name">
+                    <div id="group-name" class="login100-form-title p-b-0"> My awesome group </div>
+                    <div id="group-form-edit-name" class="form-group group-form-edit">
+                        <input type="text" class="form-control" id="group-input-name">
+                        <button id="group-edit-name-valid-btn" type="button" class="btn btn-primary edit-btn btn-sm">valid</button>
+                        <button id="group-edit-name-reset-btn" type="button" class="btn btn-danger edit-btn btn-sm">reset</button>
+                    </div>  
+                    <a id="group-icon-edit-name" class='group-icon-edit' href='#'><img src='../../static/img/icon-edit.png'></a>
+                </div>
+
+                <div id="group-container-visibility">
+                    <div id="group-visibility"> Visibility </div>
+                    <div id="group-form-edit-visibility" class="form-group group-form-edit">
+                        <div id="group-form-edit-visibility" class="form-group group-form-edit">
+                            <div class="validate-input">
+                                <select id="group-input-visibility" name="visibility" class="select-box100">
+                                    <option value="3">Private</option>
+                                    <option value="2">Semi-private</option>
+                                    <option value="1">Public</option>
+                                </select>
+                                <span class="focus-select-box100"></span>
+                            </div>
+                            <button id="group-edit-visibility-valid-btn" type="button" class="btn btn-primary edit-btn btn-sm">valid</button>
+                            <button id="group-edit-visibility-reset-btn" type="button" class="btn btn-danger edit-btn btn-sm">reset</button>
+                        </div>  
+                    </div>  
+                    <a id="group-icon-edit-visibility" class='group-icon-edit' href='#'><img src='../../static/img/icon-edit.png'></a>
+                </div>
+
+
+                    
+<!--                 <span id="group-visibility">Visibility</span> -->
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Members</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Messages</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                        <div class="group-block-admin">
+                            <h4>Admin</h4>
+                            <div id="group-admin"></div>
+                        </div>
+                        <div class="group-block-members">
+                            <h4>Members</h4>
+                            <br />
+                            <div id="group-members"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <div id="group-messages"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
